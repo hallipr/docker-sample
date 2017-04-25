@@ -27,8 +27,8 @@ Follow these steps to build and run the sample locally as a self-contained app o
 
 ```console
 cd app
-dotnet restore
-dotnet publish -c Release -o out -r win10-x64
+dotnet restore -r win10-x64
+dotnet publish -r win10-x64 -c Release -o out
 out\dotnetapp.exe
 ```
 
