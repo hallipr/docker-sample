@@ -12,7 +12,7 @@ First, prepare your environment by cloning the repository and navigating to the 
 
 ```console
 git clone https://github.com/hallipr/docker-sample
-cd dotnet-sample
+cd docker-sample
 ```
 
 Follow these steps to run the sample locally:
