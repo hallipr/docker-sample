@@ -2,7 +2,7 @@ FROM microsoft/dotnet:1.1.1-sdk-nanoserver
 WORKDIR /app
 
 # copy csproj and restore as distinct layers
-COPY app/dotnetapp.csproj ./
+COPY app/webapplication.csproj ./
 RUN dotnet restore
 
 # copy and build everything else
