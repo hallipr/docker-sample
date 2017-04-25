@@ -1,9 +1,13 @@
 dotnetapp-selfcontained Sample
 ==============================
 
-The dotnetapp-selfcontained sample demonstrates how you can build and run the dotnetapp sample as a [self-contained .NET Core application](https://docs.microsoft.com/en-us/dotnet/articles/core/deploying/) that relies only on an operating system image (plus dependencies). It's a good option for creating a Docker image for production.
+This sample builds 2 docker images containing the same application. The first is a self contained dotnetcore app.  The second, a dotnet core app requiring a runtime.
 
-The instructions assume that you already have [.NET Core 1.0](https://www.microsoft.com/net/download/core#/sdk) and [Git](https://git-scm.com/downloads) and [Docker](https://www.docker.com/products/docker) clients installed. They also assume you already know how to target Linux or Windows containers. Do try both image types. You need the latest Windows 10 or Windows Server 2016 to use [Windows containers](http://aka.ms/windowscontainers).
+| Image Name              | Size(MB) | Base Image                          | Size(MB) | Delta(MB) |
+|-------------------------|---------:|-------------------------------------|---------:|----------:|
+| dotnetapp-selfcontained |  1006.76 | microsoft/nanoserver                |   961.02 |     45.74 |
+| dotnetapp               |  1064.44 | microsoft/dotnet:runtime-nanoserver |  1064.31 |      0.13 |
+
 
 Instructions
 ------------
@@ -37,4 +41,7 @@ Follow these steps to run this sample in a  Windows container:
 ```console
 build.cmd
 docker run dotnetapp-selfcontained Hello .NET Core from Docker
+
+build.runtime.cmd
+docker run dotnetapp Hello .NET Core from Docker
 ```
