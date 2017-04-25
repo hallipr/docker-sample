@@ -2,9 +2,9 @@ FROM microsoft/dotnet:1.1.1-sdk-nanoserver
 WORKDIR /app
 
 # copy csproj and restore as distinct layers
-COPY app/dotnetapp.csproj ./
+COPY ../app/dotnetapp.csproj ./
 RUN dotnet restore -r win10-x64
 
 # copy and build everything else
-COPY app ./
+COPY ../app ./
 RUN dotnet publish -c release -o out -r win10-x64

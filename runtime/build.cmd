@@ -11,6 +11,7 @@ docker cp build-container:/app/out ./
 
 echo "cleanup"
 docker rm build-container
+docker rmi build-image
 
 echo "cleanup"
-docker build -t dotnetapp-selfcontained .
+docker build -t dotnetapp .
