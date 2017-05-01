@@ -1,6 +1,7 @@
-FROM microsoft/nanoserver:10.0.14393.1066
+FROM microsoft/nanoserver
 WORKDIR /app
-EXPOSE 80
+EXPOSE 5000
+ENV ASPNETCORE_ENVIRONMENT Development
 
 COPY out .
 ENTRYPOINT ["webapplication.exe"]

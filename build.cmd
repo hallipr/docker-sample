@@ -10,7 +10,7 @@ echo "copy dotnetapp out of build container"
 docker cp build-container:/app/out ./
 
 echo "build image"
-docker build -t webapp-selfcontained .
+docker build -t webapp .
 
 echo "cleanup"
 docker rm build-container
